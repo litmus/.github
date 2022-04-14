@@ -1,0 +1,28 @@
+---
+name: terraform-tests
+on:
+  workflow_call:
+
+jobs:
+  checkov-job:
+    runs-on: ubuntu-latest
+    name: checkov-action
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Run Checkov action
+        id: checkov
+        uses: bridgecrewio/checkov-action@v12.1103.0
+        with:
+          directory: ./
+          quiet: true
+  regula_tf_job:
+    runs-on: ubuntu-latest
+    name: regula-action
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+      - name: Run Regula compliance checks
+        uses: fugue/regula-action@v1.6.0
+        with:
+          rego_paths: .regula_config
