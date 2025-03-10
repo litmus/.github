@@ -1,4 +1,5 @@
 * @litmus/sre
 
-/.github/CODEOWNERS @mbainter
-/.githug/workflows @mbainter @bsykes @dfournier
+/.github @litmus/sre-admins
+/.github/CODEOWNERS @mbainter @dfournier
+/profile @litmus/applications @litmus/infrastructure @litmus/sre
